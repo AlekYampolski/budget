@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <script src="app.js"></script>
-    <script src="test.js"></script>
+    <div class="add">
+        <div class="add__container">
+            <select class="add__type">
+                <option value="inc" selected>+</option>
+                <option value="exp">-</option>
+            </select>
+            <input type="text" class="add__description" placeholder="Description">
+            <input type="number" class="add__value" placeholder="Value">
+            <button class="add__btn">del</button>
+        </div>
+    </div>
+    <!-- Gulp concat will be added leter -->
+    <script src="js/UIController.js"></script>
+    <script src="js/budgetController.js"></script>  
+    <script src="js/app.js"></script>
 </body>
 </html>
