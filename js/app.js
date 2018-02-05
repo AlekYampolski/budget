@@ -16,9 +16,13 @@ var controller = (function(UICtrl, budgetCtrl){
 
     //Update the budget
     var _updateBudget = function(){
+        var budget;
         // calculate the budget
+        budgetCtrl.calculateBudget();
         // return the budget
+        budget = budgetCtrl.getBudget();      
         //  Display the budget on the UI
+        console.log(budget);
     }
     
     //Add new itemm 
