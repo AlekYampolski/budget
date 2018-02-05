@@ -12,9 +12,11 @@ var UIController = (function(){
             return {
                 type: document.querySelector(_DOMStrings.inputType).value,
                 description: document.querySelector(_DOMStrings.inputDescription).value,
-                value: document.querySelector(_DOMStrings.inputValue).value
+                value: parseFloat(document.querySelector(_DOMStrings.inputValue).value)
              }
         }
+
+        
 
         //Add item to UI
         var addListItem = function(obj, type){
@@ -66,6 +68,6 @@ var UIController = (function(){
            getInput : getInput,
            getDOM : getDOM,
            addListItem : addListItem,
-           clearFields : clearFields
+           clearFields : clearFields,
         }
     })();

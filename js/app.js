@@ -13,21 +13,31 @@ var controller = (function(UICtrl, budgetCtrl){
         });
     }
     
+
+    //Update the budget
+    var _updateBudget = function(){
+        // calculate the budget
+        // return the budget
+        //  Display the budget on the UI
+    }
+    
     //Add new itemm 
     var _ctrlAddItem = function(){
         var input, newItem;
-        // 1. get the field input data
+        // Get the field input data
         input = UICtrl.getInput();
-        // 2. add the item to the budget controller
-        newItem = budgetCtrl.addItem(input.type, input.description, input.value);
-        // 3. add the item to the UI
-        UICtrl.addListItem(newItem, input.type);
-        // Clear fields
-        UICtrl.clearFields();
-        
-        // 4. calculate the budget
-        // 5. Display the budget on the UI
-        console.log('Add')
+        // Prevent false inputs
+        if(input.description !== "" && !isNaN(input.value) && input.value > 0){
+            // Add the item to the budget controller
+            newItem = budgetCtrl.addItem(input.type, input.description, input.value);
+            // Add the item to the UI
+            UICtrl.addListItem(newItem, input.type);
+            // Clear fields
+            UICtrl.clearFields();
+            // calculate and update budget
+            _updateBudget();
+            
+        }
     }
 
     // Init function. Executed code before application starts
