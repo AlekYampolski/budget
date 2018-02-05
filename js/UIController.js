@@ -6,7 +6,12 @@ var UIController = (function(){
             inputValue : '.add__value',
             inputBtn : '.add__btn',
             incomeContainer : ".income__list",
-            expenseContainer : ".expense__list"
+            expenseContainer : ".expense__list",
+            budgetLabel : ".budget__value",
+            incomeLabel : ".budget__income--value",
+            expenseLabel : ".budget__expense--value",
+            percentageLabel : ".budget__expense--percentage",
+
         }
         var getInput = function() {
             return {
@@ -62,12 +67,25 @@ var UIController = (function(){
         var getDOM = function(){
             return _DOMStrings;
         }
-    
-    
+        
+        // Note that textContent is not available in IE8 and below.
+        var displayBudget = function(obj){
+            document.querySelector(_DOMStrings.budgetLabel).textContent = obj.budget;
+            document.querySelector(_DOMStrings.incomeLabel).textContent = obj.totalIncome;
+            document.querySelector(_DOMStrings.expenseLabel).textContent = obj.totalExpense;
+            if(obj.percentage > 0){
+                document.querySelector(_DOMStrings.percentageLabel).textContent = obj.percentage + '%';
+            } else {
+                document.querySelector(_DOMStrings.percentageLabel).textContent = "---";
+            }
+
+        }
+
         return {
            getInput : getInput,
            getDOM : getDOM,
            addListItem : addListItem,
            clearFields : clearFields,
+           displayBudget : displayBudget
         }
     })();

@@ -1,4 +1,7 @@
 //GLOBAL CONTROLLER
+window.onload = function(){
+
+
 var controller = (function(UICtrl, budgetCtrl){
 
     var _setupEventListeners = function(){
@@ -22,7 +25,7 @@ var controller = (function(UICtrl, budgetCtrl){
         // return the budget
         budget = budgetCtrl.getBudget();      
         //  Display the budget on the UI
-        console.log(budget);
+        UICtrl.displayBudget(budget);
     }
     
     //Add new itemm 
@@ -47,6 +50,12 @@ var controller = (function(UICtrl, budgetCtrl){
     // Init function. Executed code before application starts
     var init = function(){
         _setupEventListeners();
+        UICtrl.displayBudget({
+            budget : 0,
+            percentage : -1,
+            totalIncome : 0,
+            totalExpense : 0
+        })
         console.log('Init function');
     }
 
@@ -57,3 +66,4 @@ var controller = (function(UICtrl, budgetCtrl){
 
 
 controller.init();
+}

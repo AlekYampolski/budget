@@ -59,7 +59,11 @@ var budgetController = (function(){
         _data.budget = _data.totals.inc - _data.totals.exp;
 
         // Calculate percentage
-        _data.percentage = Math.round((_data.totals.exp / _data.totals.inc) * 100)
+        if(_data.totals.inc > 0) {
+            _data.percentage = ((_data.totals.exp / _data.totals.inc) * 100).toFixed(2)
+        } else {
+            _data.percentage = -1;
+        }
     }
     
     //Add new item in data array
