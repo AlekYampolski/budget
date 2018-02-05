@@ -15,6 +15,18 @@ var budgetController = (function(){
         percentage : 0
     }
 
+    var Expense = function(id, description, value){
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    }
+
+    var Income = function(id, description, value){
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    }
+
     var _calculateTotal = function(type){
         var sum = 0;
 
@@ -37,18 +49,6 @@ var budgetController = (function(){
             totalIncome : _data.totals.inc,
             totalExpense : _data.totals.exp
         }
-    }
-    
-    var Expense = function(id, description, value){
-        this.id = id;
-        this.description = description;
-        this.value = value;
-    }
-
-    var Income = function(id, description, value){
-        this.id = id;
-        this.description = description;
-        this.value = value;
     }
 
     var calculateBudget = function(){
@@ -88,13 +88,23 @@ var budgetController = (function(){
         return newItem;
     }
 
-    
-    
+    // Delete item from the data structure
+    //Just use simple for loop becouse I don't want extra data and iterations from .forEach, .map, .filter, etc
+    var deleteItem = function(type, ID){
+        for (var i = 0; i < _data.allItems[type].length ; i++){
+            if (_data.allItems[type][i].id === ID){
+                _data.allItems[type].splice(i,1);
+                break;
+            }
+        }
+    }
     
     return {
         addItem : addItem,
         getData : getData,
         calculateBudget : calculateBudget,
-        getBudget : getBudget
+        getBudget : getBudget,
+        deleteItem : deleteItem,
+        
     }
 })();

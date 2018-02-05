@@ -14,11 +14,12 @@ var controller = (function(UICtrl, budgetCtrl){
                 _ctrlAddItem();
             } 
         });
+        document.querySelector(DOM.container).addEventListener('click', _ctrlDeleteItem);
     }
     
 
     //Update the budget
-    var _updateBudget = function(){
+    _updateBudget = function(){
         var budget;
         // calculate the budget
         budgetCtrl.calculateBudget();
@@ -45,6 +46,29 @@ var controller = (function(UICtrl, budgetCtrl){
             _updateBudget();
             
         }
+    }
+    
+    //Delete Item
+    var _ctrlDeleteItem = function(e){
+        var el, item, type, ID 
+        //Hard codding until get to the item id. In this case, need 3 up. Depending of DOM structure
+         el = (e.target.parentNode.parentNode.parentNode.id);
+          
+         if(el){
+             item = el.split('-');
+             ID = +item[1];
+             console.log(ID);
+             type = item[0];
+
+             // 1. Delete from budgetController data
+             budgetCtrl.deleteItem(type, ID);
+             // 2. Delete from UI
+             UICtrl.deleteListItem(el);
+             // 3. Update budget
+             _updateBudget();
+         }
+
+         
     }
 
     // Init function. Executed code before application starts

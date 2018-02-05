@@ -11,8 +11,17 @@ var UIController = (function(){
             incomeLabel : ".budget__income--value",
             expenseLabel : ".budget__expense--value",
             percentageLabel : ".budget__expense--percentage",
+            container : ".container"
 
         }
+
+        //Delete item
+        // We can remove only child element
+        var deleteListItem = function(selecotID){
+            var el = document.getElementById(selecotID);
+            el.parentNode.removeChild(el);
+        }
+        //Get input data from 
         var getInput = function() {
             return {
                 type: document.querySelector(_DOMStrings.inputType).value,
@@ -30,10 +39,10 @@ var UIController = (function(){
             //Use %item% for searching
             if(type === 'inc'){
                 element = _DOMStrings.incomeContainer;
-                html = ' <div class="item clearfix" id="expense-%id%"> <div class="item__description">%description%</div> <div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__delete"><button class="item__delete--btn">D</button></div> </div> </div>'
+                html = ' <div class="item clearfix" id="inc-%id%"> <div class="item__description">%description%</div> <div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__delete"><button class="item__delete--btn">D</button></div> </div> </div>'
             } else if (type === 'exp'){
                 element = _DOMStrings.expenseContainer;
-                html = ' <div class="item clearfix" id="expense-%id%"> <div class="item__description">%description%</div> <div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__percentage">21%</div> <div class="item__delete"><button class="item__delete--btn">D</button></div> </div> </div>'
+                html = ' <div class="item clearfix" id="exp-%id%"> <div class="item__description">%description%</div> <div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__percentage">21%</div> <div class="item__delete"><button class="item__delete--btn">D</button></div> </div> </div>'
             }
 
             //Replace the placeholder text with some actual data
@@ -86,6 +95,7 @@ var UIController = (function(){
            getDOM : getDOM,
            addListItem : addListItem,
            clearFields : clearFields,
-           displayBudget : displayBudget
+           displayBudget : displayBudget,
+           deleteListItem : deleteListItem
         }
     })();
