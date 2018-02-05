@@ -36,7 +36,27 @@ var UIController = (function(){
             //Insert HTML into the DOM
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
         }
-    
+        
+
+    /*
+    .querySelectorAll works with valid css selecotrs. So use Multiple selector  
+    .querySelectorAll return NodeList, not an array. There are better solutions for converting it to an array with ES6. Like 
+        let mArr = Array.from(mNodeList) 
+        or
+        let mArr = [...mNodeList]
+    But I will use ES5 solution for it
+        var mArr = Array.prototype.slice.call(mNodeList)
+    */
+        var clearFields = function(){
+            var fields = document.querySelectorAll(_DOMStrings.inputDescription + ', ' + _DOMStrings.inputValue);
+            fields = Array.prototype.slice.call(fields);
+            fields.forEach(function(field){
+                field.value = '';
+            });
+
+            //Focus to first input element
+            fields[0].focus();
+        }
         var getDOM = function(){
             return _DOMStrings;
         }
@@ -45,6 +65,7 @@ var UIController = (function(){
         return {
            getInput : getInput,
            getDOM : getDOM,
-           addListItem : addListItem
+           addListItem : addListItem,
+           clearFields : clearFields
         }
     })();

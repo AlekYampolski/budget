@@ -22,6 +22,9 @@ var controller = (function(UICtrl, budgetCtrl){
         newItem = budgetCtrl.addItem(input.type, input.description, input.value);
         // 3. add the item to the UI
         UICtrl.addListItem(newItem, input.type);
+        // Clear fields
+        UICtrl.clearFields();
+        
         // 4. calculate the budget
         // 5. Display the budget on the UI
         console.log('Add')
