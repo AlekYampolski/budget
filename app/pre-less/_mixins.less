@@ -1,0 +1,22 @@
+//MIXINS
+.boxes(@floatDir, @colorMain) {
+    width: 45%;
+    float: @floatDir;
+    &__title {
+        color : @colorMain;
+    }
+}
+.mainBox {
+    width: 400px;
+    float: left;
+
+    &--title {
+        width: 200px;
+        float: left;
+        padding-right: 20px;
+    }
+    &--value {
+        width: 100px;
+        float: left;
+    }
+}

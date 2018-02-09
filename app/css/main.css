@@ -1,0 +1,110 @@
+.mainBox {
+  width: 400px;
+  float: left;
+}
+.mainBox--title {
+  width: 200px;
+  float: left;
+  padding-right: 20px;
+}
+.mainBox--value {
+  width: 100px;
+  float: left;
+}
+* {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+body {
+  background: #ccc;
+}
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row ::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row__2 {
+  float: left;
+  width: 50%;
+}
+.main-budget {
+  display: block;
+  text-align: center;
+}
+.main-budget__title {
+  font-size: 2.5em;
+}
+.main-budget__value {
+  font-size: 2.2em;
+}
+.main-budget__income-title {
+  font-size: 1.4em;
+}
+.main-budget__income-value {
+  font-size: 1.7em;
+}
+.main-budget__expense-title {
+  font-size: 1.4em;
+}
+.main-budget__expense-value {
+  font-size: 1.7em;
+}
+.add::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.add__container {
+  text-align: center;
+}
+.items {
+  display: block;
+}
+.items .expense__title {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.items .income__title {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.items::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.item {
+  font-size: 1.4em;
+  margin: 0 auto;
+  width: 85%;
+  padding: 5px;
+  border: 2px solid #002200;
+  margin-bottom: 5px;
+}
+.item__description {
+  width: 65%;
+  display: block;
+  float: left;
+}
+.item__delete {
+  float: right;
+}
+.item__value {
+  float: left;
+}
+.item__right {
+  float: left;
+}
+.main-container {
+  width: 900px;
+  margin: 0 auto;
+}

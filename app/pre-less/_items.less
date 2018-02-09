@@ -1,0 +1,45 @@
+.m-title(@name) {
+    .@{name}__title{
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+}
+.items {
+    .m-title(expense);
+    .m-title(income);
+    
+    &::after {
+        content : "";
+        display: table;
+        clear: both;
+    }
+    display: block;
+    
+}
+
+.item {
+    // display: inline-block;
+    font-size: 1.4em;
+    margin: 0 auto;
+    width: 85%;;
+    padding: 5px;
+    border: 2px solid #002200;
+    margin-bottom: 5px;
+    &__description {
+        width: 65%;
+        display: block;
+        float: left;
+    }
+    &__delete {
+        float: right;
+    }
+    &__value {
+        float: left;
+    }
+    &__right {
+        float: left;
+    }
+}

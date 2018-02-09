@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Budget</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="main-budget clearfix">
+            <div class="main-budget__title">Total Budget</div>
+            <div class="main-budget__value">0</div>
+            <div class="row">
+                <div class="row__2">
+                    <div class="main-budget__income-title">Total Income</div>
+                    <div class="main-budget__income-value">0</div>
+                </div>
+
+                <div class="row__2">
+                    <div class="main-budget__expense-title">Total expense</div>
+                    <div class="main-budget__expense-value">0</div>
+                    <div class="main-budget__expense-percentage">0</div>
+                </div>
+            </div>
+        </div>
+
+       
+
+
+        <div class="add">
+            <div class="add__container">
+                <select class="add__type">
+                    <option value="inc" selected>+</option>
+                    <option value="exp">-</option>
+                </select>
+                <input type="text" class="add__description" placeholder="Description">
+                <input type="number" class="add__value" placeholder="Value">
+                <button class="add__btn">Add</button>
+            </div>
+        </div>
+
+        <div class="items clearfix">
+            <div class="row container">
+                <div class="row__2">
+                    <div class="income__title">Incomes</div>
+                    <div class="income__list">
+                    </div>
+                </div>
+                <div class="row__2">
+                    <div class="expense__title">Expenses</div>
+                    <div class="expense__list"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gulp concat will be added leter -->
+    <script src="js/UIController.js"></script>
+    <script src="js/budgetController.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

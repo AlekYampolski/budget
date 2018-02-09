@@ -1,0 +1,28 @@
+{
+  "name": "budget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekYampolski/budget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlekYampolski/budget/issues"
+  },
+  "homepage": "https://github.com/AlekYampolski/budget#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.2.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.4.0"
+  }
+}

@@ -1,0 +1,23 @@
+// MIXIN
+.item(@item-name) {
+    &__@{item-name}-title {
+        font-size: 1.4em;
+    }
+    &__@{item-name}-value {
+        font-size: 1.7em;
+    } 
+}
+
+.main-budget {
+    display: block;
+    text-align: center;
+    
+    &__title {
+        font-size: 2.5em;
+    }
+    &__value {
+        font-size: 2.2em;
+    }
+    .item(income);
+    .item(expense);
+}
